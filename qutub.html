@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qutub Minar - The Towering Wonder</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f5f5f5;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(to right, #8e0e00, #1f1c18);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 26px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .back-button {
+            display: inline-block;
+            margin-top: 10px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            background: rgba(255, 255, 255, 0.3);
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+        .back-button:hover {
+            background: white;
+            color: #8e0e00;
+        }
+        .place-detail {
+            max-width: 1000px;
+            margin: 40px auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            animation: fadeIn 1s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .image-slider {
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+            border-radius: 10px;
+        }
+        .image-slider img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            display: none;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: white;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Qutub Minar - The Towering Wonder
+        <br>
+        <a href="index.html" class="back-button">Back to Home</a>
+    </header>
+    <main>
+        <section class="place-detail">
+            <div class="image-slider">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/QutbMinarNewDelhiFromSouth.jpg/800px-QutbMinarNewDelhiFromSouth.jpg" alt="Qutub Minar">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Plaque_at_Qutub_Minar.jpg/800px-Plaque_at_Qutub_Minar.jpg" alt="Qutub ">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Lord_ganesha_idol_in_qutub_minar_complex.jpg" alt="Base of Qutub Minar">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/2018_Qutub_Minar_New_Delhi.jpg/800px-2018_Qutub_Minar_New_Delhi.jpg" alt="Qutub Minar at Sunrise">
+            </div>
+            <p>The Qutub Minar, located in Delhi, is a magnificent tower that stands as a testament to India's rich historical and architectural heritage. Built in the 12th century by Qutb-ud-din Aibak, it is the tallest brick minaret in the world, soaring to a height of 72.5 meters.</p>
+            <p>The minaret is an outstanding example of Indo-Islamic architecture, featuring intricate carvings, inscriptions from the Quran, and detailed geometric patterns. Each of its five distinct stories is adorned with bands of decorative elements that reflect the artistic grandeur of the era.</p>
+            <p>Surrounding the Qutub Minar is the Qutub Complex, a UNESCO World Heritage Site, which houses other historical structures such as the Iron Pillar, Alai Darwaza, and the ruins of ancient mosques and tombs. The Iron Pillar, in particular, is famous for its rust-resistant composition, standing strong for over a thousand years.</p>
+            <p>The Qutub Minar has withstood the test of time and numerous natural calamities, undergoing multiple renovations by rulers like Iltutmish and Firoz Shah Tughlaq. It remains one of the most visited landmarks in India, attracting history lovers, tourists, and photographers alike.</p>
+            <p>One of the most fascinating aspects of the minaret is its construction technique. The red sandstone and marble used in its construction were meticulously carved to create an intricate interplay of light and shadow, giving the tower its dynamic appearance.</p>
+            <p>The best time to visit Qutub Minar is during early morning or late evening when the soft golden light highlights its grandeur. The site also looks breathtaking when illuminated at night, offering a spectacular view to visitors.</p>
+            <p>Today, the Qutub Minar is not just a historical landmark but a symbol of Delhi’s rich past and cultural heritage. It continues to inspire awe and admiration, standing tall as a beacon of India's medieval history.</p>
+        </section>
+    </main>
+    <footer>
+        
+        <p>&copy;  India | Designed by<B>Sayanth</B></p>
+    </footer>
+    <script>
+        $(document).ready(function() {
+            $('.image-slider img').hide().first().show();
+            let index = 0;
+            setInterval(function() {
+                $('.image-slider img').eq(index).fadeOut(1000, function() {
+                    index = (index + 1) % $('.image-slider img').length;
+                    $('.image-slider img').eq(index).fadeIn(1000);
+                });
+            }, 4000);
+        });
+    </script>
+</body>
+</html>
