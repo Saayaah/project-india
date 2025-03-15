@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taj Mahal, Agra</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f5f5f5;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .back-button {
+            display: inline-block;
+            margin-top: 10px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            background: rgba(255, 255, 255, 0.3);
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+        .back-button:hover {
+            background: white;
+            color: #2575fc;
+        }
+        .place-detail {
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            animation: fadeIn 1s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .image-slider {
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+            border-radius: 10px;
+        }
+        .image-slider img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            display: none;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: white;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Taj Mahal, Agra
+        <br>
+        <a href="index.html" class="back-button">Back to Home</a>
+    </header>
+    <main>
+        <section class="place-detail">
+            <div class="image-slider">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Taj_Mahal_in_India_-_Kristian_Bertel.jpg/1280px-Taj_Mahal_in_India_-_Kristian_Bertel.jpg" alt="Taj Mahal">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Taj_Mahal_N-UP-A28-a_%28cropped%29.jpg/800px-Taj_Mahal_N-UP-A28-a_%28cropped%29.jpg" alt="Taj Mahal  View">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Interior_of_Taj%2C_Agra_%28cropped%29.jpg" alt="Taj Mahal" >
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Taj_Mahal_%287113248335%29.jpg/1280px-Taj_Mahal_%287113248335%29.jpg" alt="Taj Mahal  ">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/bf/Tombs-in-crypt.jpg" alt="Taj Mahal ">
+            </div>
+            <p>The Taj Mahal, one of the New Seven Wonders of the World, is an architectural marvel located in Agra, India. Commissioned in 1632 by Mughal Emperor Shah Jahan in memory of his beloved wife, Mumtaz Mahal, this ivory-white marble mausoleum symbolizes eternal love.</p>
+            <p>Built over 22 years by 20,000 artisans, the Taj Mahal blends Persian, Islamic, and Indian architectural styles, making it one of the most exquisite monuments in history. The complex consists of a grand central dome, four surrounding minarets, and intricate floral motifs inlaid with semi-precious stones.</p>
+            <p>One of the most fascinating aspects of the Taj Mahal is its ability to change colors throughout the day. At sunrise, it takes on a soft pink hue; in daylight, it shines brilliantly white; and during sunset, it glows in warm golden tones. Under the moonlight, it emanates an ethereal glow, adding to its mystique.</p>
+            <p>The Taj Mahal stands as a symbol of devotion and grandeur, attracting millions of visitors every year. The beautifully landscaped gardens, inspired by Persian designs, enhance its beauty and provide a serene ambiance for tourists. A reflecting pool in the foreground mirrors the monument, offering stunning photographic opportunities.</p>
+            <p>Visitors to the Taj Mahal can explore the intricately designed interior, which includes exquisite calligraphy, marble inlays, and cenotaphs dedicated to Shah Jahan and Mumtaz Mahal. The craftsmanship involved in its creation remains unparalleled, showcasing the artistic brilliance of Mughal architects and artisans.</p>
+            <p>Recognized as a UNESCO World Heritage Site, the Taj Mahal is not just an architectural masterpiece but also a symbol of India's rich cultural heritage. Whether viewed in the golden hues of sunrise or under the shimmering night sky, this iconic monument leaves an indelible mark on all who visit.</p>
+        </section>
+    </main>
+    <footer>
+        
+        <p>&copy;  India | Designed by <B>Sayanth</B></p>
+    </footer>
+    <script>
+        $(document).ready(function() {
+            $('.image-slider img').hide().first().show();
+            let index = 0;
+            setInterval(function() {
+                $('.image-slider img').eq(index).fadeOut(1000, function() {
+                    index = (index + 1) % $('.image-slider img').length;
+                    $('.image-slider img').eq(index).fadeIn(1000);
+                });
+            }, 4000);
+        });
+    </script>
+</body>
+</html>
