@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andaman and Nicobar Islands - A Tropical Paradise</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #e3f2fd;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(to right, #007bb5, #00d4ff);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 26px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .back-button {
+            display: inline-block;
+            margin-top: 10px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            background: rgba(255, 255, 255, 0.3);
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+        .back-button:hover {
+            background: white;
+            color: #007bb5;
+        }
+        .place-detail {
+            max-width: 1000px;
+            margin: 40px auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            animation: fadeIn 1s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .image-slider {
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+            border-radius: 10px;
+        }
+        .image-slider img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            display: none;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: white;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Andaman and Nicobar Islands - A Tropical Paradise
+        <br>
+        <a href="index.html" class="back-button">Back to Home</a>
+    </header>
+    <main>
+        <section class="place-detail">
+            <div class="image-slider">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Havelock_Island%2C_Mangrove_trees_in_tropical_sea%2C_Andaman_Islands.jpg/1280px-Havelock_Island%2C_Mangrove_trees_in_tropical_sea%2C_Andaman_Islands.jpg" alt="Andaman Beach">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Front_View_of_Cellular_Jail%2C_Port_Blair.JPG/375px-Front_View_of_Cellular_Jail%2C_Port_Blair.JPG" alt="Cellular Jail">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Radha_Nagar_beach%2C_Havelock_Island%2C_Andamn%2C_India-_Sun_set_view.jpg/375px-Radha_Nagar_beach%2C_Havelock_Island%2C_Andamn%2C_India-_Sun_set_view.jpg" alt="Radhanagar Beach">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Coral_reef_Elephant_Beach_%2CAndaman_03.jpg" alt="Scuba Diving">
+            </div>
+            <p>The Andaman and Nicobar Islands, a group of picturesque islands in the Bay of Bengal, are a tropical haven known for their pristine beaches, crystal-clear waters, and rich marine biodiversity. This Union Territory of India comprises over 500 islands, of which only a few are inhabited.</p>
+            <p>One of the most iconic sites in the Andaman Islands is Radhanagar Beach, often ranked among the world's best beaches. Its soft white sand, turquoise waters, and lush surroundings make it a perfect destination for relaxation and photography.</p>
+            <p>Another significant landmark is the Cellular Jail, also known as Kala Pani, which played a crucial role during India’s freedom struggle. Today, it stands as a memorial, reminding visitors of the sacrifices made by the freedom fighters.</p>
+            <p>Adventure enthusiasts can indulge in thrilling activities such as scuba diving, snorkeling, and deep-sea walking at Havelock and Neil Islands. The coral reefs surrounding these islands are home to diverse marine life, offering an unforgettable underwater experience.</p>
+            <p>For wildlife lovers, the Mahatma Gandhi Marine National Park provides an opportunity to explore the region's rich biodiversity, including sea turtles, exotic fish, and rare bird species. The Great Nicobar Biosphere Reserve is another must-visit for nature lovers.</p>
+            <p>The Andaman Islands also have a fascinating indigenous culture, with tribes like the Sentinelese, Onges, and Jarwas residing in restricted regions, preserving their ancient traditions.</p>
+            <p>With its blend of natural beauty, historical significance, and adventure activities, the Andaman and Nicobar Islands offer a once-in-a-lifetime experience for travelers looking to explore an unspoiled paradise.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy;  India | Designed by <B>Sayanth</B></p>   
+    </footer> 
+    <script>
+        $(document).ready(function() {
+            $('.image-slider img').hide().first().show();
+            let index = 0;
+            setInterval(function() {
+                $('.image-slider img').eq(index).fadeOut(1000, function() {
+                    index = (index + 1) % $('.image-slider img').length;
+                    $('.image-slider img').eq(index).fadeIn(1000);
+                });
+            }, 4000);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goa - The Beach Paradise</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f0f8ff;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 26px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .back-button {
+            display: inline-block;
+            margin-top: 10px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            background: rgba(255, 255, 255, 0.3);
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+        .back-button:hover {
+            background: white;
+            color: #ff7e5f;
+        }
+        .place-detail {
+            max-width: 1000px;
+            margin: 40px auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            animation: slideUp 1s;
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .image-slider {
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+            border-radius: 10px;
+        }
+        .image-slider img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            display: none;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: white;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Goa - The Beach Paradise
+        <br>
+        <a href="index.html" class="back-button">Back to Home</a>
+    </header>
+    <main>
+        <section class="place-detail">
+            <div class="image-slider">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/BeachFun.jpg" alt="Goa Beach">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Dudhsagar_Falls_Triplet.jpg/1280px-Dudhsagar_Falls_Triplet.jpg" alt="Dudhsagar Waterfalls">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Basilica_of_bom_jesus_-_Front_View.jpg/1280px-Basilica_of_bom_jesus_-_Front_View.jpg" alt="Basilica of Bom Jesus">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Anjuna_Beach%2C_Goa%2C_India%2C_Legendary_Curlies_beach_shack.jpg/1280px-Anjuna_Beach%2C_Goa%2C_India%2C_Legendary_Curlies_beach_shack.jpg" alt="Anjuna Beach">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Gallery_de_Fontainhas.jpg/1280px-Gallery_de_Fontainhas.jpg" alt="Fort Aguada">
+            </div>
+            <p>Goa, India's smallest state, is renowned for its stunning coastline, lively nightlife, and colonial heritage. Nestled along the western coast, Goa offers a perfect blend of scenic beaches, historic sites, and a relaxed tropical vibe.</p>
+            <p>The beaches of Goa, such as Baga, Anjuna, and Palolem, are world-famous for their golden sands and crystal-clear waters. Tourists flock here for sunbathing, water sports, and beachside parties. Goa’s nightlife is equally mesmerizing, with numerous beach clubs, shacks, and casinos offering an unforgettable experience.</p>
+            <p>Beyond the beaches, Goa is rich in history and culture. The Basilica of Bom Jesus, a UNESCO World Heritage Site, houses the remains of St. Francis Xavier and is an architectural marvel. Fort Aguada, a 17th-century Portuguese fort, offers breathtaking views of the Arabian Sea.</p>
+            <p>For nature lovers, the Dudhsagar Waterfalls, one of India's tallest waterfalls, provides a stunning retreat amidst lush greenery. The spice plantations of Goa offer a unique glimpse into the region’s agricultural heritage, where visitors can learn about exotic spices and enjoy a serene environment.</p>
+            <p>Goan cuisine is a delightful mix of Indian and Portuguese influences. Seafood lovers must try dishes like Goan prawn curry, fish recheado, and bebinca, a traditional Goan dessert. The laid-back vibe, welcoming locals, and picturesque landscapes make Goa a perfect getaway for travelers from all walks of life.</p>
+            <p>Apart from its natural beauty and historical charm, Goa also hosts various festivals, including the Goa Carnival and Sunburn Festival, attracting visitors worldwide. The vibrant flea markets, bustling streets, and serene riverside experiences make Goa a destination that never ceases to amaze.</p>
+            <p>Whether you’re an adventure seeker, a history buff, or simply looking to unwind on a pristine beach, Goa offers an unparalleled experience that leaves every traveler with unforgettable memories.</p>
+        </section>
+    </main>
+    <footer>
+        
+        <p>&copy;  India | Designed by <B>Sayanth</B></p>
+    </footer>
+    <script>
+        $(document).ready(function() {
+            $('.image-slider img').hide().first().show();
+            let index = 0;
+            setInterval(function() {
+                $('.image-slider img').eq(index).fadeOut(1000, function() {
+                    index = (index + 1) % $('.image-slider img').length;
+                    $('.image-slider img').eq(index).fadeIn(1000);
+                });
+            }, 4000);
+        });
+    </script>
+</body>
+</html>

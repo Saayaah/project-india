@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaipur - The Pink City</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #fff3e6;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(to right, #ff9a8b, #ff6a88, #ff99ac);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 26px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .back-button {
+            display: inline-block;
+            margin-top: 10px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            background: rgba(255, 255, 255, 0.3);
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+        .back-button:hover {
+            background: white;
+            color: #ff6a88;
+        }
+        .place-detail {
+            max-width: 1000px;
+            margin: 40px auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            animation: fadeIn 1s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .image-slider {
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+            border-radius: 10px;
+        }
+        .image-slider img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            display: none;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: white;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Jaipur - The Pink City
+        <br>
+        <a href="index.html" class="back-button">Back to Home</a>
+    </header>
+    <main>
+        <section class="place-detail">
+            <div class="image-slider">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/East_facade_Hawa_Mahal_Jaipur_from_ground_level_%28July_2022%29_-_img_01.jpg/1280px-East_facade_Hawa_Mahal_Jaipur_from_ground_level_%28July_2022%29_-_img_01.jpg" alt="Hawa Mahal">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/20191219_Fort_Amber%2C_Amer%2C_Jaipur_0955_9481.jpg/1024px-20191219_Fort_Amber%2C_Amer%2C_Jaipur_0955_9481.jpg" alt="Amber Fort">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Jantar_Mantar_at_Jaipur.jpg/1920px-Jantar_Mantar_at_Jaipur.jpg" alt="Jantar Mantar">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Chandra_Mahal%2C_City_Palace%2C_Jaipur%2C_20191218_0951_9043.jpg/1024px-Chandra_Mahal%2C_City_Palace%2C_Jaipur%2C_20191218_0951_9043.jpg" alt="City Palace">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/47/Nahargarh_13.jpg" alt="Nahargarh Fort">
+            </div>
+            <p>Jaipur, the capital of Rajasthan, is famously known as the Pink City due to its distinctive terracotta-colored buildings. The city is a blend of regal heritage, architectural splendor, and vibrant culture.</p>
+            <p>One of Jaipur’s most iconic landmarks is the Hawa Mahal, also known as the Palace of Winds. Built in 1799, this stunning five-story structure features 953 intricately designed windows, allowing cool air to flow through and offering a mesmerizing view of the city.</p>
+            <p>The Amber Fort, a magnificent structure built with red sandstone and marble, stands as a testament to Rajasthan’s royal past. With its majestic halls, intricate mirror work, and scenic views of Maota Lake, the fort is a must-visit destination.</p>
+            <p>Jantar Mantar, a UNESCO World Heritage Site, showcases Jaipur’s rich scientific heritage. It is home to the world's largest stone sundial and several astronomical instruments designed by Maharaja Sawai Jai Singh II.</p>
+            <p>The City Palace, an exquisite blend of Mughal and Rajasthani architecture, serves as the residence of Jaipur’s royal family. The palace houses museums displaying royal costumes, armory, and artifacts from Rajasthan’s glorious past.</p>
+            <p>Jaipur is also famous for Nahargarh Fort, which offers breathtaking views of the city, and Jal Mahal, a mesmerizing palace floating on the Man Sagar Lake.</p>
+            <p>The bustling bazaars of Jaipur, such as Johari Bazaar and Bapu Bazaar, are a paradise for shoppers. Visitors can explore traditional Rajasthani jewelry, textiles, and handicrafts.</p>
+            <p>With its royal charm, vibrant traditions, and historical landmarks, Jaipur is a city that captures the essence of India’s majestic past.</p>
+        </section>
+    </main>
+    <footer>
+        
+        <p>&copy;  India | Designed by <B>Sayanth</B></p>
+    </footer>
+    <script>
+        $(document).ready(function() {
+            $('.image-slider img').hide().first().show();
+            let index = 0;
+            setInterval(function() {
+                $('.image-slider img').eq(index).fadeOut(1000, function() {
+                    index = (index + 1) % $('.image-slider img').length;
+                    $('.image-slider img').eq(index).fadeIn(1000);
+                });
+            }, 4000);
+        });
+    </script>
+</body>
+</html>
