@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranthambore National Park - The Wildlife Haven</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #e8f5e9;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(to right, #2c3e50, #4ca1af);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 26px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .back-button {
+            display: inline-block;
+            margin-top: 10px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            background: rgba(255, 255, 255, 0.3);
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+        .back-button:hover {
+            background: white;
+            color: #2c3e50;
+        }
+        .place-detail {
+            max-width: 1000px;
+            margin: 40px auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            animation: fadeIn 1s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .image-slider {
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+            border-radius: 10px;
+        }
+        .image-slider img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            display: none;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: white;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Ranthambore National Park - The Wildlife Haven
+        <br>
+        <a href="index.html" class="back-button">Back to Home</a>
+    </header>
+    <main>
+        <section class="place-detail">
+            <div class="image-slider">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Jungle_Landscape.jpg/330px-Jungle_Landscape.jpg" alt="Ranthambore">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Ranthambore_Fort%2C_Rajasthan.JPG/1280px-Ranthambore_Fort%2C_Rajasthan.JPG" alt="View">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Spotted_deer_in_Ranthambhore_Tiger_Reserve.jpg" alt=" Ranthambore">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/17/Tiger_from_Ranthanbore_Sawai_Madhopur_Rajasthan_India_12.10.2014.jpg" alt="Ranthambore">
+            </div>
+            <p>Ranthambore National Park, located in the Sawai Madhopur district of Rajasthan, is one of India’s most renowned wildlife reserves. It is best known for its thriving population of Bengal tigers and is a prime destination for wildlife enthusiasts and photographers.</p>
+            <p>The park spans over 1,334 square kilometers and features dry deciduous forests, rocky terrain, and lush green valleys. It was once a royal hunting ground but was later converted into a protected area to conserve its diverse flora and fauna.</p>
+            <p>The park’s main attraction is the majestic Bengal tiger, often seen roaming freely amidst the ruins of the ancient Ranthambore Fort. Apart from tigers, the park is home to leopards, sloth bears, sambar deer, hyenas, and a variety of bird species.</p>
+            <p>The Ranthambore Fort, a UNESCO World Heritage Site, stands atop a hill within the park. Built in the 10th century, it offers breathtaking views of the landscape and adds a historical charm to the wildlife experience.</p>
+            <p>Visitors can embark on thrilling jeep safaris or canter safaris, guided by experienced naturalists. These safaris provide an opportunity to witness wildlife in their natural habitat and capture stunning photographs of the park’s beauty.</p>
+            <p>Ranthambore is not just about wildlife; it is also rich in cultural heritage, with ancient temples, lakes, and ruins scattered throughout the reserve. The serene Padam Talao and Malik Talao lakes are home to crocodiles, adding to the park’s biodiversity.</p>
+            <p>The park is best visited between October and June, with peak sightings during the summer months when animals gather near water sources. It is a must-visit destination for nature lovers and adventure seekers alike.</p>
+        </section>
+    </main>
+    <footer>
+        
+        <p>&copy;  India | Designed by <B>Sayanth</B></p>
+    </footer>
+    <script>
+        $(document).ready(function() {
+            $('.image-slider img').hide().first().show();
+            let index = 0;
+            setInterval(function() {
+                $('.image-slider img').eq(index).fadeOut(1000, function() {
+                    index = (index + 1) % $('.image-slider img').length;
+                    $('.image-slider img').eq(index).fadeIn(1000);
+                });
+            }, 4000);
+        });
+    </script>
+</body>
+</html>
