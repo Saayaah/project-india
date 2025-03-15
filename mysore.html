@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mysore Palace - The Royal Majesty</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f8f9fa;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(to right, #ff6f61, #de6262);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 26px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .back-button {
+            display: inline-block;
+            margin-top: 10px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            background: rgba(255, 255, 255, 0.3);
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+        .back-button:hover {
+            background: white;
+            color: #de6262;
+        }
+        .place-detail {
+            max-width: 1000px;
+            margin: 40px auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            animation: fadeIn 1s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .image-slider {
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+            border-radius: 10px;
+        }
+        .image-slider img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            display: none;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: white;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Mysore Palace - The Royal Majesty
+        <br>
+        <a href="index.html" class="back-button">Back to Home</a>
+    </header>
+    <main>
+        <section class="place-detail">
+            <div class="image-slider">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/KITLV_92039_-_Unknown_-_Palace_of_the_Rajah_at_Mysore_in_India_-_Around_1870.tif/lossy-page1-1280px-KITLV_92039_-_Unknown_-_Palace_of_the_Rajah_at_Mysore_in_India_-_Around_1870.tif.jpg" alt="Mysore Palace">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Mysore_Palace_%288113480008%29.jpg/1280px-Mysore_Palace_%288113480008%29.jpg" alt="Mysore Palace at Night">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/A_very_well_lit_Durbar_Hall_%28ceremonial_meeting_hall_of_the_royal_court%29_of_Amba_Vilas_Palace_%28Mysuru_Palace%29%2C_during_day.jpg/1280px-A_very_well_lit_Durbar_Hall_%28ceremonial_meeting_hall_of_the_royal_court%29_of_Amba_Vilas_Palace_%28Mysuru_Palace%29%2C_during_day.jpg" alt="Mysore Palace Interior">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Mysore_Palace_gate.jpg/1280px-Mysore_Palace_gate.jpg" alt="Dussehra Celebration at Mysore Palace">
+            </div>
+            <p>The Mysore Palace, also known as the Amba Vilas Palace, is one of India's most stunning architectural wonders and the pride of Karnataka. Nestled in the heart of Mysore, this grand palace was once the royal residence of the Wadiyar dynasty.</p>
+            <p>Constructed in the Indo-Saracenic style, the palace blends Hindu, Muslim, Rajput, and Gothic architectural elements. The palace is adorned with intricately carved doors, beautiful stained glass windows, and an opulent durbar hall.</p>
+            <p>One of the most mesmerizing sights of the palace is during the Mysore Dasara festival when it is illuminated with nearly 100,000 light bulbs, transforming it into a dazzling spectacle.</p>
+            <p>The interiors of the palace boast a rich collection of paintings, jewel-studded golden thrones, and grand chandeliers, reflecting the lavish lifestyle of the Wadiyars. The ceiling artwork and Belgian glass windows further enhance the palace’s beauty.</p>
+            <p>The palace grounds also house several temples, including the Someshvara Temple and Lakshmi Ramana Temple, showcasing the rich spiritual and cultural heritage of Mysore.</p>
+            <p>Every year, millions of tourists visit the Mysore Palace to witness its grandeur, explore its history, and experience its regal charm.</p>
+        </section>
+    </main>
+    <footer>
+        
+        <p>&copy;  India | Designed by <B>Sayanth</B></p>
+    </footer>
+    <script>
+        $(document).ready(function() {
+            $('.image-slider img').hide().first().show();
+            let index = 0;
+            setInterval(function() {
+                $('.image-slider img').eq(index).fadeOut(1000, function() {
+                    index = (index + 1) % $('.image-slider img').length;
+                    $('.image-slider img').eq(index).fadeIn(1000);
+                });
+            }, 4000);
+        });
+    </script>
+</body>
+</html>
