@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     typeWriter(); 
 
-    // Initial animation for place cards
+    
     gsap.from(".place-card", {
         opacity: 0,
         y: 50,
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ease: "power3.out"
     });
 
-    // Scroll animation for place cards
+    
     const placeCards = document.querySelectorAll(".place-card");
     placeCards.forEach(card => {
         gsap.from(card, {
